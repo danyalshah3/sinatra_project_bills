@@ -1,0 +1,6 @@
+<h1>Your Expenses</h1>
+<ul>
+<% @expenses.each do |expense| %>
+  <li><a href="expenses/<%=expense.id%>"><%= expense.vendor %></a></li>
+<% end %>
+</ul>

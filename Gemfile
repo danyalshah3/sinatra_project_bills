@@ -12,9 +12,12 @@ gem 'pry'
 gem 'bcrypt'
 gem 'tux'
 gem 'faker'
+gem 'flash_rails_messages'
 
 group :test do
   gem 'rspec'
   gem 'capybara'
   gem 'rack-test'
 end
+
+gem "dotenv", "~> 2.7"

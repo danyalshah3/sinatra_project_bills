@@ -1,37 +1,44 @@
 class UsersController < ApplicationController
+    
 
-  # GET: /users
-  get "/users" do
-    erb :"/users/index.html"
-  end
+    # new
+    get "/users/new" do
+      erb :"users/new.html"
+    end
 
-  # GET: /users/new
-  get "/users/new" do
-    erb :"/users/new.html"
-  end
 
-  # POST: /users
-  post "/users" do
-    redirect "/users"
-  end
+    # create
+    post "/users" do
+      user = User.create(params)
+      session[:user_id] = user.id
+      redirect "/"
+     
+    end
 
-  # GET: /users/5
-  get "/users/:id" do
-    erb :"/users/show.html"
-  end
+    # # users show
+    # get "/users/:id" do
+    #   @user = User.find(params[:id])
+    #  erb :"users/show.html"
+    # end
 
-  # GET: /users/5/edit
-  get "/users/:id/edit" do
-    erb :"/users/edit.html"
-  end
-
-  # PATCH: /users/5
-  patch "/users/:id" do
-    redirect "/users/:id"
-  end
-
-  # DELETE: /users/5/delete
-  delete "/users/:id/delete" do
-    redirect "/users"
-  end
+    get "/login" do
+       erb :"users/login.html"
+    end 
+    
+    post "/users/login" do
+      user = User.find_by_username(params[:username])
+      if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect "/"
+      else 
+        @errors = "No such account exists. Please try again or signup for a new account."
+        erb :"users/login.html"
+      end
+    end
+    
+    get "/logout" do
+      session.clear
+      redirect "/"
+    end  
 end
+

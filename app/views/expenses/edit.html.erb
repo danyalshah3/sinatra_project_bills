@@ -1,0 +1,14 @@
+<h1>Edit <%= @expense.vendor %></h1>
+
+<form action="/expenses/<%= @expense.id %>" method="post">
+<input type="hidden" name="_method" value="patch">
+  <label for="name">Vendor:</label><br>
+  <input type="text" id="vendor" name="vendor" value=<%= @expense.vendor %>><br>
+  <label for="date">Date:</label><br>
+  <input type="date" id="date" name="date" value=<%= @expense.description %>><br>
+  <label for="description">Description:</label><br>
+  <input type="text" id="description" name="description" value=<%= @expense.description %>><br>
+  <label for="total">Total_Amount: $</label>
+  <input type="number" name="total" id="total" min="0.00"><br>
+  <input type="submit" value="Create Expense!">
+</form>

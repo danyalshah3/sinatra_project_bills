@@ -1,1 +1,11 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+<h1>Welcome <%= @user.username %></h1><br>
+<% if @user.expenses.any?%>
+<h4>Below is the list of all your expenses:</h4><br>
+  <% @user.expenses.each do |expense| %>
+      <a href="/expenses/<%= expense.id %>"><%= expense.vendor %></a><br>
+ <% end %>
+<% else %>
+    <% if @user == current_user %>
+    <p><a href="/expenses/new">Add your expenses here!</a><p>
+    <% end %>
+    <% end %>
