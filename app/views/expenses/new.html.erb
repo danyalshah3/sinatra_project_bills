@@ -2,16 +2,16 @@
 
 <form action="/expenses" method="post">
   <label for="vendor">Vendor:</label><br>
-  <input type="text" id="vendor" name="expense[vendor]" value=<%= @expense.vendor %>><br>
+  <input type="text" id="vendor" name="expense[vendor]"><br>
   </br>
   <label for="date">Date:</label><br>
-  <input type="date" id="date" name="expense[date]" value=<%= @expense.date %>><br>
+  <input type="date" id="date" name="expense[date]"><br>
   </br>
   <label for="description">Description:</label><br>
-  <input type="text" id="description" name="expense[description]" value=<%= @expense.description %>><br>
+  <input type="text" id="description" name="expense[description]"><br>
   </br>
   <label for="total_amount">Total_Amount: $</label><br>
-  <input type="number" name="expense[total_amount]" id="total_amount" min="0.00" value= <%= @expense.total_amount %><br>
+  <input type="number" name="expense[total_amount]" id="total_amount" min="0.00"><br>
   </br>
   <input type="submit" value="Create Expense">
 </form>

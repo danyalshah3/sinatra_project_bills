@@ -8,7 +8,7 @@ class ExpensesController < ApplicationController
     
     #create
     post "/expenses" do
-        @expense = current_user.expenses.create(params[:expense])
+        expense = current_user.expenses.create(params[:expense])
         redirect "/expenses/#{expense.id}"
     end 
     
@@ -26,13 +26,17 @@ class ExpensesController < ApplicationController
 
 
     #edit
-    get "expenses/:id/edit" do
-        @expense = Expense.find(parms[:id])
+    get "/expenses/:id/edit" do
+        @expense = Expense.find(params[:id])
         erb :"expenses/edit.html"
     end
 
-    patch "expenses/:id" do
-        @expense = Expense.find(params[:id])
+    patch "/expenses/:id" do
+        expense = Expense.find(params[:id])
+        expense.vendor = params[:vendor]
+        expense.date = params[:date]
+        expense.description = params[:description]
+        expense.total_amount = params[:total_amount]
         expense.update(params[:expense])
         redirect "/expenses/#{expense.id}"
     end

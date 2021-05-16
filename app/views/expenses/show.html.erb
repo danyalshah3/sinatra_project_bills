@@ -11,9 +11,10 @@
 <p>Total_amount: $<%= @expense.total_amount %></p>
 
 
-<a href="/expenses/<%= expense.id %>/edit">Edit <%= @expense.vendor %></a>
+<a href="/expenses/<%= @expense.id %>/edit">Edit <%= @expense.vendor %></a><br>
+</br>
 
 <form action="/expenses/<%= @expense.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete this Expense!">
+  <input type="submit" value="Delete Expense!">
 </form>
