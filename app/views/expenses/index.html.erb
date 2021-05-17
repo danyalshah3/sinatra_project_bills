@@ -1,11 +1,18 @@
-<% if logged_in? %>
 <h2>Your Expenses</h2><br>
+
+<form method="get" action="/expenses">
+    <input type="text" name="search">
+    <input type="submit" value="Search for an expense!">
+  </form><br>
+  
+<% if @expense == current_user%>
 <ul>
 <% @expenses.each do |expense| %>
   <li><a href="/expenses/<%=expense.id%>"><%= expense.date %>:&nbsp;<%= expense.vendor %></a></li><br>
   <% end %>
   <% else %>
-  <br></br>
   <p>There are no recorded expenses!!!</p><br>
-<% end %>
-</ul>
+  <% end %>
+  </ul>
+  
+  

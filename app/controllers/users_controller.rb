@@ -10,16 +10,17 @@ class UsersController < ApplicationController
     # create
     post "/users" do
       user = User.create(params)
+      if user.save
       session[:user_id] = user.id
       redirect "/"
+      else
+        flash[:errors] = user.errors.full_messages
+        redirect  "users/new"
+      end  
      
     end
 
-    # users show
-    get "/users/:id" do
-      @user = User.find(params[:id])
-     erb :"users/show.html"
-    end
+    
 
     get "/login" do
        erb :"users/login.html"

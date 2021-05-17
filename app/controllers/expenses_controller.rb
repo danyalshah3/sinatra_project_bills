@@ -9,14 +9,25 @@ class ExpensesController < ApplicationController
     #create
     post "/expenses" do
         expense = current_user.expenses.create(params[:expense])
+        if expense.valid?
         redirect "/expenses/#{expense.id}"
+        else 
+            flash[:errors] = expense.errors.full_messages
+            redirect "/expenses/new"
+        end
     end 
     
     #index
     get "/expenses" do
-        @expenses = Expense.all
-        erb :"expenses/index.html"   
-    end
+        if params[:search]
+         @expenses = Expense.where('name LIKE ?', "%#{params[:search]}%")
+        else
+          
+         @expenses = Expense.all
+         erb :"expenses/index.html"   
+    
+        end 
+    end   
 
     #show
     get "/expenses/:id" do

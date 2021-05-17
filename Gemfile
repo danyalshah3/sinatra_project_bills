@@ -12,7 +12,7 @@ gem 'pry'
 gem 'bcrypt'
 gem 'tux'
 gem 'faker'
-gem 'flash_rails_messages'
+
 
 group :test do
   gem 'rspec'
@@ -21,3 +21,5 @@ group :test do
 end
 
 gem "dotenv", "~> 2.7"
+
+gem "sinatra-flash", "~> 0.3.0"
