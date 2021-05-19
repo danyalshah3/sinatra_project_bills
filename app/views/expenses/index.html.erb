@@ -5,13 +5,10 @@
     <input type="submit" value="Search for an expense!">
   </form><br>
   
-<% if @expense == current_user%>
+
 <ul>
 <% @expenses.each do |expense| %>
   <li><a href="/expenses/<%=expense.id%>"><%= expense.date %>:&nbsp;<%= expense.vendor %></a></li><br>
-  <% end %>
-  <% else %>
-  <p>There are no recorded expenses!!!</p><br>
   <% end %>
   </ul>
   

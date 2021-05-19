@@ -20,13 +20,11 @@ class ExpensesController < ApplicationController
     #index
     get "/expenses" do
         if params[:search]
-         @expenses = Expense.where('name LIKE ?', "%#{params[:search]}%")
+         @expenses = Expense.where("vendor LIKE ?", "%#{params[:search]}%")
         else
-          
-         @expenses = Expense.all
-         erb :"expenses/index.html"   
-    
-        end 
+            @expenses = Expense.all
+        end
+            erb :"expenses/index.html"   
     end   
 
     #show
