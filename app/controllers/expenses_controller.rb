@@ -24,7 +24,7 @@ class ExpensesController < ApplicationController
         else
             @expenses = Expense.all
         end
-            erb :"expenses/index.html"   
+        erb :"expenses/index.html"   
     end   
 
     #show

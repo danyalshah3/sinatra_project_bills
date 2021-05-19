@@ -14,7 +14,7 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: brown;
+    background-image: url("paper.gif");
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
