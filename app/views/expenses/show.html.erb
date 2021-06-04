@@ -10,7 +10,7 @@
 <p>Description: <%= @expense.description %></p>
 <p>Total_amount: $<%= @expense.total_amount %></p>
 
-
+<% if current_user == @expense.user %>
 <a href="/expenses/<%= @expense.id %>/edit">Edit <%= @expense.vendor %></a><br>
 </br>
 
@@ -18,3 +18,4 @@
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete Expense!">
 </form>
+<% end %>

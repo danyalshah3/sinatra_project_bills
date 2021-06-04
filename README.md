@@ -1,4 +1,4 @@
-Make an interative app using ActiveRecord::Base using its curretn version.
+Make an interative app using ActiveRecord::Base using its current version.
 Used CRUD actions to make it an effective app.
 It should consist of application controllers(divided into three separate parts), model and views. 
 You should make a database table and migrate it using rake.
