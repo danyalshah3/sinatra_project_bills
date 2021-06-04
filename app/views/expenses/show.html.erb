@@ -10,7 +10,7 @@
 <p>Description: <%= @expense.description %></p>
 <p>Total_amount: $<%= @expense.total_amount %></p>
 
-<% if current_user == @expense.user %>
+<% if current_users == @expense.user %>
 <a href="/expenses/<%= @expense.id %>/edit">Edit <%= @expense.vendor %></a><br>
 </br>
 
