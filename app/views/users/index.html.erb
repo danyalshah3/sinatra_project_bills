@@ -1,8 +1,0 @@
-<h1>Here are all the Users in our Database</h1><br>
-<ul>
-<% @users.each do |user| %>
-  <li>
-    <a href="/users/<%= user.id %>"><%= user.username %></a><br>
-  </li>
-<% end %>
-</ul>
