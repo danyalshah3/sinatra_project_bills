@@ -2,6 +2,7 @@ class ExpensesController < ApplicationController
     
     #new
     get "/expenses/new" do
+        redirect_if_not_logged_in
         @expense = Expense.new
         erb :"expenses/new.html"
     end
