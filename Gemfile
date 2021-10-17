@@ -7,7 +7,6 @@ gem 'rake'
 gem 'require_all'
 # gem 'pg'
 
-gem 'thin'
 gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
@@ -17,10 +16,11 @@ gem 'faker'
 group :development do
   gem 'sqlite3'
   gem "tux"
- end
- 
- group :production do
+end
+
+group :production do
   gem 'pg'
+  gem 'thin'
  end
 
 group :test do
