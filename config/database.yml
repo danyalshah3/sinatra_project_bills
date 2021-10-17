@@ -1,16 +1,27 @@
+# development:
+#   adapter: postgresql
+#   database: my_database_development
+#   pool: 5
+#   timeout: 5000
+# test:
+#   adapter: postgresql
+#   database: my_database_test
+#   pool: 5
+#   timeout: 5000
+
+# production:
+#   adapter: postgresql
+#   database: my_database_production
+#   pool: 5
+#   timeout: 5000
+
 development:
   adapter: postgresql
-  database: my_database_development
-  pool: 5
-  timeout: 5000
-test:
-  adapter: postgresql
-  database: my_database_test
-  pool: 5
-  timeout: 5000
-
+  encoding: unicode
+  database: database_development
+  pool: 2
 production:
   adapter: postgresql
-  database: my_database_production
+  encoding: unicode
+  databaes: database_production
   pool: 5
-  timeout: 5000
