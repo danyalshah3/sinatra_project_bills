@@ -5,29 +5,29 @@ gem 'activerecord', '~> 5.2'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'rake'
 gem 'require_all'
-gem 'pg'
+# gem 'pg'
 
 gem 'thin'
 gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
-gem 'tux'
+# gem 'tux'
 gem 'faker'
 
-# group :development do
-#   gem 'sqlite3'
-#   gem "tux"
-#  end
+group :development do
+  gem 'sqlite3'
+  gem "tux"
+ end
  
-#  group :production do
-#   gem 'pg'
-#  end
+ group :production do
+  gem 'pg'
+ end
 
-# group :test do
-#   gem 'rspec'
-#   gem 'capybara'
-#   gem 'rack-test'
-# end
+group :test do
+  gem 'rspec'
+  gem 'capybara'
+  gem 'rack-test'
+end
 
 gem "dotenv", "~> 2.7"
 
